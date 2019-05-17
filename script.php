@@ -1251,7 +1251,7 @@ function pull(){
 
             ;
 
-           $sql = mysqli_query($this->conn , "INSERT INTO `transact` (`bank`, `who`, `complete`, `acc_name`, `acc_num`, `swift`, `country`, `hash`, `amount`, `time`) VALUES ('$bank', '$who', 'no', '$accn1', '$acnn1', 'none', 'none', '$hash', '$amount1', NOW())");
+           $sql = mysqli_query($this->conn , "INSERT INTO `transact` (`bank`, `who`, `complete`, `acc_name`, `acc_num`, `swift`, `country`, `hash`, `amount`,`comment`, `time`) VALUES ('$bank', '$who', 'pro', '$accn1', '$acnn1', '$swift', '$country', '$hash', '$amount1', '$comment', NOW())");
            if ($sql) {
               echo '<script>
                   var a = "transaction.php";
@@ -2231,13 +2231,13 @@ mail($this->to,$this->subject,$this->message,$this->headers);
       }elseif ($row["complete"] == 'no') {
         echo '
 
-          Dear customer,  your transaction cannot be completed at this time. Please contact customer services as soon as possible.
+          Dear customer,  your transaction has been reveresed and will not be completed at this time. Please contact customer services for more assistance as soon as possible.
 
             ';
       }elseif ($row["complete"] == 'note') {
         echo '
 
-          Dear customer,  your transaction has been canceled and will not be completed please contact customer services as soon as possible.
+          Dear customer, your transaction cannot be completed at this time.<br> Please contact customer services as soon as possible. 
 
             ';
       }
@@ -2268,8 +2268,9 @@ mail($this->to,$this->subject,$this->message,$this->headers);
                       <td>'.($row["bank"] == 'same' ? 'SPRING HERITAGE BANK' : $row["bank"]).'</td>
                       <td>'.$row["acc_name"].'</td>
                       <td> $'.$row["amount"].'</td>
+                      <td>'.($row["comment"] == 'none' ? 'No comments available' : $row["comment"]).'</td>
                       <td>'.$real.'</td>
-                      <td><a href="transfer-fail.php?id='.$row["hash"].'" class=" btn btn-info"> Check status </a> 
+                      <td><a href="transfer-fail.php?id='.$row["hash"].'" target="_blank" class=" btn btn-info"> Check status </a> 
                       </td>
                       <td> '.$row["time"].'</td>
                     </tr>
@@ -2323,7 +2324,7 @@ mail($this->to,$this->subject,$this->message,$this->headers);
         <td>'.$num.'</td>
         <td>'.$row["who"].'</td>
         <td>'.($row["bank"] == 'same' ? 'Spring heritage bank' : $row["bank"]).'</td>
-        <td>'.$row["acc_name"].' '.$row["acc_num"].'</td>
+        <td>'.$row["acc_name"].' '.$row["acc_num"].' '.($row["swift"] == 'none' ? ' ' : $row["swift"].' '.$row["country"]).'</td>
         <td>'.($row["complete"]  == 'yes' ? 'completed' : 'uncompleted').'</td>
         <td> $'.$row["amount"].'</td>
         <td>'.($row["complete"]  == 'yes' ? '<a href="unconfirm_tran.php?who='.$row["who"].'&to='.$row["acc_num"].'&id='.$row["tran_id"].'&am='.$row["amount"].'" class="btn btn-danger"> unconfirm </a>' :  

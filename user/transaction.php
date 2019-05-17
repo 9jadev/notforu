@@ -124,25 +124,10 @@ if (!isset($_SESSION["cname"])) {
 		<div class="row">			
 				<!-- Item -->				
 				<?php //$classObj->gettransact(); ?>
-			<div class="table-reponsive">
-		  		<table id="table_id" class="table table-hover display">
-				    <thead>
-				      <tr>
-				      	<th> SN </th>
-				      	<th> Bank </th>
-				      	<th> Reciever </th>
-				        <th> Amount</th>
-				        <th> Status</th>
-				        <th> View </th>
-				        <th> Date </th>
-				      </tr>
-				    </thead>
-				    <tbody>
-				      <?php $classObj->gettt(); ?>
-				    </tbody>
-			    </table>
-		    </div>
-
+				<iframe src="http://localhost/oki/user/trans_iframe.php" style="border: 0px; height: 290px;" width="100%">
+				  <p>Your browser does not support iframes.</p>
+				</iframe>
+		
 			<div class="row">
 				
 				<!-- Copyrights -->

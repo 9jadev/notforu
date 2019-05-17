@@ -21,7 +21,7 @@ if (!isset($_SESSION["cname"])) {
 
 <!-- Basic Page Needs
 ================================================== -->
-<title> CUSTOMER || DASHBOARD || home</title>
+<title> CUSTOMER || DASHBOARD || Investment Tab</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,7 +79,7 @@ if (!isset($_SESSION["cname"])) {
 		       	<!-- Breadcrumbs -->
 					<nav id="breadcrumbs">
 						<ul>
-							<li><a href="#">Home</a></li>
+							<li><a href="#">Investment</a></li>
 							<li>Dashboard</li>
 						</ul>
 					</nav>
@@ -126,92 +126,99 @@ if (!isset($_SESSION["cname"])) {
 		<!-- stock market pricing widget  -->
 		
 		<div class="row">
-
-			<?php echo $classObj->getnoti(); ?>
+				<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/indices/" rel="noopener" target="_blank"><span class="blue-text">Index Quotes</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+  {
+  "locale": "en",
+  "symbolsGroups": [
+    {
+      "symbols": [
+        {
+          "displayName": "S&P 500",
+          "name": "OANDA:SPX500USD"
+        },
+        {
+          "displayName": "E-Mini S&P",
+          "name": "CME_MINI:ES1!"
+        },
+        {
+          "displayName": "U.S. Dollar Currency Index",
+          "name": "INDEX:DXY"
+        },
+        {
+          "displayName": "Dow 30",
+          "name": "FOREXCOM:DJI"
+        },
+        {
+          "displayName": "Volatility S&P 500",
+          "name": "INDEX:VIX"
+        }
+      ],
+      "name": "US & Canada"
+    },
+    {
+      "symbols": [
+        {
+          "displayName": "Euro Stoxx 50",
+          "name": "INDEX:MOY0"
+        },
+        {
+          "displayName": "FTSE 100",
+          "name": "FOREXCOM:UKXGBP"
+        },
+        {
+          "displayName": "DAX Index",
+          "name": "INDEX:DAX"
+        },
+        {
+          "displayName": "CAC 40 Index",
+          "name": "INDEX:CAC"
+        },
+        {
+          "name": "INDEX:SMI"
+        }
+      ],
+      "name": "Europe"
+    },
+    {
+      "symbols": [
+        {
+          "displayName": "Nikkei 225",
+          "name": "INDEX:NKY"
+        },
+        {
+          "displayName": "Hang Seng",
+          "name": "INDEX:HSI"
+        },
+        {
+          "displayName": "BSE SENSEX",
+          "name": "BSE:SENSEX"
+        },
+        {
+          "name": "BSE:BSE500"
+        },
+        {
+          "displayName": "Kospi Composite",
+          "name": "INDEX:KQY0"
+        }
+      ],
+      "name": "Asia/Pacific"
+    }
+  ],
+  "title": "Indices",
+  "width": 770,
+  "height": 450
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
 			
-			<!-- Item -->
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<?php echo $classObj->genbal3() ?>
-				<?php echo $classObj->pro() ?>
-			</div>
-
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="dashboard-stat color-3">
-					<div class="dashboard-stat-content"><span> <a href="invest.php"> Investment opportunity </a></span></div>
-					<div class="dashboard-stat-icon"><i class="im im-icon-Bank"></i></div>
-				</div>
-			</div>
-
-			<?php echo $classObj->getto(); ?>
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="dashboard-stat color-3">
-					<div class="dashboard-stat-content"><span> <a href="withdraw.php">Withdraw</a></span></div>
-					<div class="dashboard-stat-icon"><i class="im im-icon-Add-UserStar"></i></div>
-				</div>
-			</div>
-
-
-			<!-- Item -->
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="dashboard-stat color-4">
-					<div class="dashboard-stat-content"> <span><a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Transfer </a></span></div>
-					<div class="dashboard-stat-icon"><i class=" im im-icon-Business-Man"></i></div>
-				</div>
-			</div>
 		</div>
 
-		<div class="row">
-					<div class="slideshow-container">
-
-						<div class="mySlides fade">
-						  <div class="numbertext">1 / 3</div>
-						  <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" style="width:100%">
-						  <div class="text">Caption Text</div>
-						</div>
-
-						<div class="mySlides fade">
-						  <div class="numbertext">2 / 3</div>
-						  <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" style="width:100%">
-						  <div class="text">Caption Two</div>
-						</div>
-
-						<div class="mySlides fade">
-						  <div class="numbertext">3 / 3</div>
-						  <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" style="width:100%">
-						  <div class="text">Caption Three</div>
-						</div>
-
-						<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-						<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-						</div>
-						<br>
-
-						<div style="text-align:center">
-						  <span class="dot" onclick="currentSlide(1)"></span> 
-						  <span class="dot" onclick="currentSlide(2)"></span> 
-						  <span class="dot" onclick="currentSlide(3)"></span> 
-						</div>
-
-						<script>
-						var slideIndex = 0;
-								showSlides();
-
-								function showSlides() {
-								  var i;
-								  var slides = document.getElementsByClassName("mySlides");
-								  for (i = 0; i < slides.length; i++) {
-								    slides[i].style.display = "none"; 
-								  }
-								  slideIndex++;
-								  if (slideIndex > slides.length) {slideIndex = 1} 
-								  slides[slideIndex-1].style.display = "block"; 
-								  setTimeout(showSlides, 2000); // Change image every 2 seconds
-								}
-						</script>
-
-			</div>		
-
+			
 		<div class="row">
 			
 			<!-- Copyrights -->

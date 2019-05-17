@@ -158,33 +158,33 @@ font-family: 'Pacifico', cursive; -->
 <p style="height: 10px;"></p>
 
 
-<div class="row">
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
-	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding: 30px;">
-	<div class="table-responsive">          
-  <table id="example" class="table well" style="width:100% ;color : black;">
-    <thead>
-      <tr style="color:red;">
-        <th>S/N</th>
-        <th>From</th>
-        <th>Bank</th>
-        <th>Reciver</th>
-        <th>Status</th>
-        <th>Amount</th>
-        <th>Reverse</th>
-        <th>Delete</th>
-        <th>time</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-      <?php $classObj->getransact(); ?>
-    </tbody>  
-  </table>
-  </div>
+    <div class="row">
+    	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+    	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding: 30px;">
+    	<div class="table-responsive">          
+      <table id="example" class="table well" style="width:100% ;color : black;">
+        <thead>
+          <tr style="color:red;">
+            <th>S/N</th>
+            <th>From</th>
+            <th>Bank</th>
+            <th>Reciver</th>
+            <th>Status</th>
+            <th>Amount</th>
+            <th>Reverse</th>
+            <th>Delete</th>
+            <th>time</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <?php $classObj->getransact(); ?>
+        </tbody>  
+      </table>
+      </div>
 
-	</div>
-	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
+    	</div>
+    	<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
  </div>
 
 

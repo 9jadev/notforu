@@ -18,7 +18,7 @@ if (isset($_SESSION["aname"])) {
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>First Heritage Bank Admin login</title>
+	<title>Spring Heritage Bank Admin login</title>
 <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Karla|Lobster|Pacifico" rel="stylesheet">
  <link rel="stylesheet" type="text/css" href="dashboard/css/bootstrap.min.css">
 <link rel="stylesheet" href="dashboard/css/font-awesome.css">
