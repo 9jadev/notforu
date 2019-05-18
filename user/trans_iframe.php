@@ -35,6 +35,7 @@ if (!isset($_SESSION["cname"])) {
 				      	<th> Reciever </th>
 				        <th> Amount</th>
 				        <th> Comment </th>
+				        <th> IBAN/BIC </th>
 				        <th> Status</th>
 				        <th> View </th>
 				        <th> Date </th>

@@ -126,96 +126,137 @@ if (!isset($_SESSION["cname"])) {
 		<!-- stock market pricing widget  -->
 		
 		<div class="row">
-				<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/indices/" rel="noopener" target="_blank"><span class="blue-text">Index Quotes</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
-  {
-  "locale": "en",
-  "symbolsGroups": [
-    {
-      "symbols": [
-        {
-          "displayName": "S&P 500",
-          "name": "OANDA:SPX500USD"
-        },
-        {
-          "displayName": "E-Mini S&P",
-          "name": "CME_MINI:ES1!"
-        },
-        {
-          "displayName": "U.S. Dollar Currency Index",
-          "name": "INDEX:DXY"
-        },
-        {
-          "displayName": "Dow 30",
-          "name": "FOREXCOM:DJI"
-        },
-        {
-          "displayName": "Volatility S&P 500",
-          "name": "INDEX:VIX"
-        }
-      ],
-      "name": "US & Canada"
-    },
-    {
-      "symbols": [
-        {
-          "displayName": "Euro Stoxx 50",
-          "name": "INDEX:MOY0"
-        },
-        {
-          "displayName": "FTSE 100",
-          "name": "FOREXCOM:UKXGBP"
-        },
-        {
-          "displayName": "DAX Index",
-          "name": "INDEX:DAX"
-        },
-        {
-          "displayName": "CAC 40 Index",
-          "name": "INDEX:CAC"
-        },
-        {
-          "name": "INDEX:SMI"
-        }
-      ],
-      "name": "Europe"
-    },
-    {
-      "symbols": [
-        {
-          "displayName": "Nikkei 225",
-          "name": "INDEX:NKY"
-        },
-        {
-          "displayName": "Hang Seng",
-          "name": "INDEX:HSI"
-        },
-        {
-          "displayName": "BSE SENSEX",
-          "name": "BSE:SENSEX"
-        },
-        {
-          "name": "BSE:BSE500"
-        },
-        {
-          "displayName": "Kospi Composite",
-          "name": "INDEX:KQY0"
-        }
-      ],
-      "name": "Asia/Pacific"
-    }
-  ],
-  "title": "Indices",
-  "width": 770,
-  "height": 450
-}
-  </script>
-</div>
-<!-- TradingView Widget END -->
-			
+			<h3 class="text-center">Available Investments</h3>
+				<div>
+							<!-- TradingView Widget BEGIN -->
+						<div class="tradingview-widget-container">
+						  <div class="tradingview-widget-container__widget" ></div>
+						  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+						  {
+						  "width": "100%",
+						  "height": "574",
+						  "symbolsGroups": [
+						    {
+						      "originalName": "Indices",
+						      "symbols": [
+						        {
+						          "displayName": "S&P 500",
+						          "name": "OANDA:SPX500USD"
+						        },
+						        {
+						          "displayName": "Shanghai Composite",
+						          "name": "INDEX:XLY0"
+						        },
+						        {
+						          "displayName": "Dow 30",
+						          "name": "FOREXCOM:DJI"
+						        },
+						        {
+						          "displayName": "Nikkei 225",
+						          "name": "INDEX:NKY"
+						        },
+						        {
+						          "displayName": "DAX Index",
+						          "name": "INDEX:DAX"
+						        },
+						        {
+						          "displayName": "FTSE 100",
+						          "name": "OANDA:UK100GBP"
+						        }
+						      ],
+						      "name": "Indices"
+						    },
+						    {
+						      "originalName": "Commodities",
+						      "symbols": [
+						        {
+						          "displayName": "E-Mini S&P",
+						          "name": "CME_MINI:ES1!"
+						        },
+						        {
+						          "displayName": "Euro",
+						          "name": "CME:E61!"
+						        },
+						        {
+						          "displayName": "Gold",
+						          "name": "COMEX:GC1!"
+						        },
+						        {
+						          "displayName": "Crude Oil",
+						          "name": "NYMEX:CL1!"
+						        },
+						        {
+						          "displayName": "Natural Gas",
+						          "name": "NYMEX:NG1!"
+						        },
+						        {
+						          "displayName": "Corn",
+						          "name": "CBOT:ZC1!"
+						        }
+						      ],
+						      "name": "Commodities"
+						    },
+						    {
+						      "originalName": "Bonds",
+						      "symbols": [
+						        {
+						          "displayName": "Eurodollar",
+						          "name": "CME:GE1!"
+						        },
+						        {
+						          "displayName": "T-Bond",
+						          "name": "CBOT:ZB1!"
+						        },
+						        {
+						          "displayName": "Ultra T-Bond",
+						          "name": "CBOT:UD1!"
+						        },
+						        {
+						          "displayName": "Euro Bund",
+						          "name": "EUREX:GG1!"
+						        },
+						        {
+						          "displayName": "Euro BTP",
+						          "name": "EUREX:II1!"
+						        },
+						        {
+						          "displayName": "Euro BOBL",
+						          "name": "EUREX:HR1!"
+						        }
+						      ],
+						      "name": "Bonds"
+						    },
+						    {
+						      "originalName": "Forex",
+						      "symbols": [
+						        {
+						          "name": "FX:EURUSD"
+						        },
+						        {
+						          "name": "FX:GBPUSD"
+						        },
+						        {
+						          "name": "FX:USDJPY"
+						        },
+						        {
+						          "name": "FX:USDCHF"
+						        },
+						        {
+						          "name": "FX:AUDUSD"
+						        },
+						        {
+						          "name": "FX:USDCAD"
+						        }
+						      ],
+						      "name": "Forex"
+						    }
+						  ],
+						  "locale": "en"
+						}
+						  </script>
+						</div>
+						<!-- TradingView Widget END -->
+				</div>	
 		</div>
 
 			
@@ -236,7 +277,7 @@ if (!isset($_SESSION["cname"])) {
 </div>
 <!-- Wrapper / End -->
 
-	<div id="sign-in-dialog" style="max-width: 552px;" class="zoom-anim-dialog mfp-hide">
+<div id="sign-in-dialog" style="max-width: 552px;" class="zoom-anim-dialog mfp-hide">
 
 				<div class="small-dialog-header">
 					<h3>Transfer</h3>
@@ -350,7 +391,11 @@ if (!isset($_SESSION["cname"])) {
 										<input type="text" name="swift" class="input-text"  value=""  required="yes"/>
 								</label>
 							</p>
-
+							<p class="form-row form-row-wide">
+								<label for="email2">Reciever's IBAN/BIC:
+										<input type="text" name="bic" class="input-text"  value=""  required="yes"/>
+								</label>
+							</p>
 							<p class="form-row form-row-wide">
 								<label for="email2">Reciever's Country:
 										<input type="text" min="0" name="country" class="input-text"  value=""  required="yes"/>

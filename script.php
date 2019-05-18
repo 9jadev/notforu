@@ -1244,6 +1244,7 @@ function pull(){
            $swift = mysqli_real_escape_string($this->conn, trim($_POST['swift']));
            $country = mysqli_real_escape_string($this->conn, trim($_POST['country']));
            $amount1 = mysqli_real_escape_string($this->conn, trim($_POST['amount1']));
+           $bic = mysqli_real_escape_string($this->conn, trim($_POST['bic']));
            $hash = rand(10000000,19999999); 
            $comment = mysqli_real_escape_string($this->conn, trim($_POST['comment']));
             $anss = $who.' '.$bank.' '.$acnn1.' '.$accn1.' '.$swift.' '.$country.' '.$amount1.' '.$hash.' '.$comment;
@@ -1251,7 +1252,7 @@ function pull(){
 
             ;
 
-           $sql = mysqli_query($this->conn , "INSERT INTO `transact` (`bank`, `who`, `complete`, `acc_name`, `acc_num`, `swift`, `country`, `hash`, `amount`,`comment`, `time`) VALUES ('$bank', '$who', 'pro', '$accn1', '$acnn1', '$swift', '$country', '$hash', '$amount1', '$comment', NOW())");
+           $sql = mysqli_query($this->conn , "INSERT INTO `transact` (`bank`, `who`, `complete`, `acc_name`, `acc_num`, `swift`, `country`, `hash`, `amount`,`comment`,`bic`, `time`) VALUES ('$bank', '$who', 'pro', '$accn1', '$acnn1', '$swift', '$country', '$hash', '$amount1', '$comment','$bic', NOW())");
            if ($sql) {
               echo '<script>
                   var a = "transaction.php";
@@ -2224,6 +2225,10 @@ mail($this->to,$this->subject,$this->message,$this->headers);
       $sen = $_GET["id"];
       $sql = mysqli_query($this->conn , " SELECT * FROM `transact` WHERE `hash` = '$sen' ");
       $row = mysqli_fetch_assoc($sql);
+      if (mysqli_num_rows($sql) == " ") {
+        echo 'Dear customer, transaction does\'nt exist or has been deleted .';
+        exit();
+      }
       if ($row["complete"] == 'pro') {
         echo '
           Dear customer, please wait your transaction is processing.
@@ -2237,11 +2242,11 @@ mail($this->to,$this->subject,$this->message,$this->headers);
       }elseif ($row["complete"] == 'note') {
         echo '
 
-          Dear customer, your transaction cannot be completed at this time.<br> Please contact customer services as soon as possible. 
+          Dear customer, your transaction cannot be completed at this time.Please contact customer services as soon as possible. 
 
             ';
       }
-      else{
+      elseif($row["complete"] == 'yes' ){
          echo '
            Dear customer, we are glad to inform you that your transaction is successful.         
             ';
@@ -2268,7 +2273,8 @@ mail($this->to,$this->subject,$this->message,$this->headers);
                       <td>'.($row["bank"] == 'same' ? 'SPRING HERITAGE BANK' : $row["bank"]).'</td>
                       <td>'.$row["acc_name"].'</td>
                       <td> $'.$row["amount"].'</td>
-                      <td>'.($row["comment"] == 'none' ? 'No comments available' : $row["comment"]).'</td>
+                      <td>'.(($row["comment"] == 'none' OR $row["comment"] == NULL ) ? 'No comments available' : $row["comment"]).'</td>
+                      <td>'.(($row["bic"] == 'none' OR $row["bic"] == NULL ) ? 'No IBAN/BIC ' : $row["bic"]).'</td>
                       <td>'.$real.'</td>
                       <td><a href="transfer-fail.php?id='.$row["hash"].'" target="_blank" class=" btn btn-info"> Check status </a> 
                       </td>
@@ -2329,6 +2335,7 @@ mail($this->to,$this->subject,$this->message,$this->headers);
         <td> $'.$row["amount"].'</td>
         <td>'.($row["complete"]  == 'yes' ? '<a href="unconfirm_tran.php?who='.$row["who"].'&to='.$row["acc_num"].'&id='.$row["tran_id"].'&am='.$row["amount"].'" class="btn btn-danger"> unconfirm </a>' :  
           ($row["complete"] == 'note' ? ' ' : '<a href="nott.php?who='.$row["who"].'&to='.$row["acc_num"].'&am='.$row["amount"].'&id='.$row["tran_id"].'"> STOP </a> <a href="confirm_tran.php?who='.$row["who"].'&to='.$row["acc_num"].'&am='.$row["amount"].'&id='.$row["tran_id"].'" class="btn btn-info"> confirm  </a>').' ').' </td>
+        <td>'.(($row["bic"] == 'none' OR $row["bic"] == NULL ) ? 'No IBAN/BIC ' : $row["bic"]).'</td>
         <td><a href="delete_tran.php?id='.$row["tran_id"].'" class="btn btn-danger"> Danger  </a></td>
         <td>'.$row["time"].'</td>
       </tr>

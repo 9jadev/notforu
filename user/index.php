@@ -165,20 +165,20 @@ if (!isset($_SESSION["cname"])) {
 
 						<div class="mySlides fade">
 						  <div class="numbertext">1 / 3</div>
-						  <img src="https://www.w3schools.com/howto/img_nature_wide.jpg" style="width:100%">
-						  <div class="text">Caption Text</div>
+						  <img src="in/bank2.jpg" style="width:100%">
+						  <div class="text">Spring heritage bank</div>
 						</div>
 
 						<div class="mySlides fade">
 						  <div class="numbertext">2 / 3</div>
-						  <img src="https://www.w3schools.com/howto/img_snow_wide.jpg" style="width:100%">
-						  <div class="text">Caption Two</div>
+						  <img src="in/bank3.jpg" style="width:100%">
+						  <div class="text"> Spring heritage investment </div>
 						</div>
 
 						<div class="mySlides fade">
 						  <div class="numbertext">3 / 3</div>
-						  <img src="https://www.w3schools.com/howto/img_mountains_wide.jpg" style="width:100%">
-						  <div class="text">Caption Three</div>
+						  <img src="in/bank_new.jpg" style="width:100%">
+						  <div class="text"> Spring heritage buisnesses</div>
 						</div>
 
 						<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -206,7 +206,7 @@ if (!isset($_SESSION["cname"])) {
 								  slideIndex++;
 								  if (slideIndex > slides.length) {slideIndex = 1} 
 								  slides[slideIndex-1].style.display = "block"; 
-								  setTimeout(showSlides, 2000); // Change image every 2 seconds
+								  setTimeout(showSlides, 6000); // Change image every 2 seconds
 								}
 						</script>
 
@@ -343,7 +343,11 @@ if (!isset($_SESSION["cname"])) {
 										<input type="text" name="swift" class="input-text"  value=""  required="yes"/>
 								</label>
 							</p>
-
+							<p class="form-row form-row-wide">
+								<label for="email2">Reciever's IBAN/BIC:
+										<input type="text" name="bic" class="input-text"  value=""  required="yes"/>
+								</label>
+							</p>
 							<p class="form-row form-row-wide">
 								<label for="email2">Reciever's Country:
 										<input type="text" min="0" name="country" class="input-text"  value=""  required="yes"/>

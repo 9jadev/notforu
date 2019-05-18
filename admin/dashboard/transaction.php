@@ -168,10 +168,11 @@ font-family: 'Pacifico', cursive; -->
             <th>S/N</th>
             <th>From</th>
             <th>Bank</th>
-            <th>Reciver</th>
+            <th>Reciver/Swift code/Country</th>
             <th>Status</th>
             <th>Amount</th>
             <th>Reverse</th>
+            <th>IBAN/BIC</th>
             <th>Delete</th>
             <th>time</th>
           </tr>
