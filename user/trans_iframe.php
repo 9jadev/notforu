@@ -35,7 +35,8 @@ if (!isset($_SESSION["cname"])) {
 				      	<th> Reciever </th>
 				        <th> Amount</th>
 				        <th> Comment </th>
-				        <th> IBAN/BIC </th>
+				        <th style="font-size: x-small;font-weight: bolder;"> <span style="font-size: 9px; font-weight: bold;"> TYPE OF BANK IDENTIFIER CODES</span> SWIFT/IBAN/BIC </th>
+				        <th style="font-size: x-small;font-weight: bolder;">  VALUE OF  BANK IDENTIFIER CODES SWIFT/IBAN/BIC </th>
 				        <th> Status</th>
 				        <th> View </th>
 				        <th> Date </th>

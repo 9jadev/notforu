@@ -9,15 +9,15 @@ class ok {
 public $dbuser,$dbpassword, $dbhost, $dbname, $conn, $query,$query1,$fn,$ln,$em,$un,$ph,$pass,$cpass,$bio,$img_path,$img_ext,$img_dir,$img_name,$img_tmpname,$client,$message,$process,$process1,$row,$to,$id,$vid,$pn,$purl,$sid,$token,$rpp,$nor,$nop,$page,$tpfr,$subject,$headers;
 
    function dbcon(){ 
-    $this->dbhost ="localhost";
-    $this->dbuser ="admin";
-    $this->dbpassword ="2929361f2cad9afeede8a69f6e618100b8bade5782cec2bb";
-    $this->dbname ="oki";
-
     // $this->dbhost ="localhost";
-    // $this->dbuser ="root";
-    // $this->dbpassword ="";
+    // $this->dbuser ="admin";
+    // $this->dbpassword ="2929361f2cad9afeede8a69f6e618100b8bade5782cec2bb";
     // $this->dbname ="oki";
+
+    $this->dbhost ="localhost";
+    $this->dbuser ="root";
+    $this->dbpassword ="";
+    $this->dbname ="oki";
 
     $this->conn = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpassword, $this->dbname );
       if (!$this->conn) {
@@ -2282,7 +2282,9 @@ mail($this->to,$this->subject,$this->message,$this->headers);
                       <td>'.$row["acc_name"].'</td>
                       <td> $'.$row["amount"].'</td>
                       <td>'.(($row["comment"] == 'none' OR $row["comment"] == NULL ) ? 'No comments available' : $row["comment"]).'</td>
-                      <td>'.(($row["bic"] == 'none' OR $row["bic"] == NULL ) ? 'No IBAN/BIC ' : $row["bic"]).'</td>
+                     
+                      <td>'.$row["swift"].'</td>
+                      <td>'.$row["bic"].'</td>
                       <td>'.$real.'</td>
                       <td><a href="transfer-fail.php?id='.$row["hash"].'" target="_blank" class=" btn btn-info"> Check status </a> 
                       </td>
@@ -2343,7 +2345,7 @@ mail($this->to,$this->subject,$this->message,$this->headers);
         <td> $'.$row["amount"].'</td>
         <td>'.($row["complete"]  == 'yes' ? '<a href="unconfirm_tran.php?who='.$row["who"].'&to='.$row["acc_num"].'&id='.$row["tran_id"].'&am='.$row["amount"].'" class="btn btn-danger"> unconfirm </a>' :  
           ($row["complete"] == 'note' ? ' ' : '<a href="nott.php?who='.$row["who"].'&to='.$row["acc_num"].'&am='.$row["amount"].'&id='.$row["tran_id"].'"> STOP </a> <a href="confirm_tran.php?who='.$row["who"].'&to='.$row["acc_num"].'&am='.$row["amount"].'&id='.$row["tran_id"].'" class="btn btn-info"> confirm  </a>').' ').' </td>
-        <td>'.(($row["bic"] == 'none' OR $row["bic"] == NULL ) ? 'No IBAN/BIC ' : $row["bic"]).'</td>
+        <td>'.$row["swift"].' / '.$row["bic"].'</td>
         <td><a href="delete_tran.php?id='.$row["tran_id"].'" class="btn btn-danger"> Danger  </a></td>
         <td>'.$row["time"].'</td>
       </tr>
