@@ -1028,11 +1028,11 @@ $this->headers .= 'From: SPRING HERITAGE BANK<info@spring-heritagebank.com>' ;
 
 
 mail($this->to,$this->subject,$this->message,$this->headers);
-        echo '
-        <script>
-                 window.location.assign("transaction.php");
-        </script>
-        '; 
+        // echo '
+        // <script>
+        //          window.location.assign("transaction.php");
+        // </script>
+        // '; 
       }  
      }
    }
