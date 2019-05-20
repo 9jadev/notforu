@@ -42,6 +42,7 @@ require('script.php');
     <!-- fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Ropa+Sans:400,400i&amp;subset=latin-ext" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- //fonts -->
     <!-- scrolling script -->
     <script type="text/javascript">
@@ -535,6 +536,7 @@ SPRING HERITAGE BANK and its affiliates offer investment products, which may inc
         $(document).ready(function() {
 
             $().UItoTop({ easingType: 'easeOutQuart' });
+            swal("Welcome", " We wish to welcome you to the family that enjoy great  banking services and financial stability.");
 
         });
     </script>
