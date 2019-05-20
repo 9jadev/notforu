@@ -15,7 +15,7 @@ public $dbuser,$dbpassword, $dbhost, $dbname, $conn, $query,$query1,$fn,$ln,$em,
     $this->dbname ="oki";
     $this->conn = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpassword, $this->dbname );
       if (!$this->conn) {
-        echo "database connction failed";
+        echo "Connection error: " . mysqli_connect_error();
       }
     }
 
