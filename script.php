@@ -9,17 +9,15 @@ class ok {
 public $dbuser,$dbpassword, $dbhost, $dbname, $conn, $query,$query1,$fn,$ln,$em,$un,$ph,$pass,$cpass,$bio,$img_path,$img_ext,$img_dir,$img_name,$img_tmpname,$client,$message,$process,$process1,$row,$to,$id,$vid,$pn,$purl,$sid,$token,$rpp,$nor,$nop,$page,$tpfr,$subject,$headers;
 
    function dbcon(){ 
-    $this->dbhost ="localhost";
-    $this->dbuser ="admin";
-    $this->dbpassword ="2929361f2cad9afeede8a69f6e618100b8bade5782cec2bb";
-    $this->dbname ="oki";
-
-    // $this->dbhost ="138.68.74.232";
+    // $this->dbhost ="localhost";
     // $this->dbuser ="admin";
     // $this->dbpassword ="2929361f2cad9afeede8a69f6e618100b8bade5782cec2bb";
     // $this->dbname ="oki";
 
-
+    $this->dbhost ="localhost";
+    $this->dbuser ="root";
+    $this->dbpassword ="";
+    $this->dbname ="oki";
 
     $this->conn = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpassword, $this->dbname );
       if (!$this->conn) {
@@ -803,106 +801,106 @@ function intertransfer(){
      if ($this->process1) {
        
        
-       
+       echo 'done it';
     
-     $this->subject = "Debit  alert ";
+//      $this->subject = "Debit  alert ";
 
-$this->message = '
+// $this->message = '
 
         
         
         
 
-<html>
-  <head>
-    <title> Debit Alert </title>
-  </head>
-  <body style="padding: 10px; border: 5px double #09d0d6; ">
-  <p>&nbsp; &nbsp;&nbsp;</p>
+// <html>
+//   <head>
+//     <title> Debit Alert </title>
+//   </head>
+//   <body style="padding: 10px; border: 5px double #09d0d6; ">
+//   <p>&nbsp; &nbsp;&nbsp;</p>
 
-<p style="text-align: center;"><img alt="SPRING HERTAGE LOGO" src="https://springheritage-bank.com/images/logo.png" style="height:70px; width:64px" /></p>
+// <p style="text-align: center;"><img alt="SPRING HERTAGE LOGO" src="https://springheritage-bank.com/images/logo.png" style="height:70px; width:64px" /></p>
 
-<h1 style="     text-align: center;" ><span style="font-family:Comic Sans MS, cursive"><strong>SPRING HERITAGE BANK&nbsp;</strong></span></h1>
+// <h1 style="     text-align: center;" ><span style="font-family:Comic Sans MS, cursive"><strong>SPRING HERITAGE BANK&nbsp;</strong></span></h1>
 
-<h2><span style="font-family:Comic Sans MS, cursive"><strong>Dear customer ,&nbsp;</strong></span></h2>
+// <h2><span style="font-family:Comic Sans MS, cursive"><strong>Dear customer ,&nbsp;</strong></span></h2>
 
-<p><span><strong>&nbsp; &nbsp; &nbsp; SPRING HERITAGE BANK Debit Alert  as a result of transfer transaction
-</strong>Please be informed that a debit transaction occurred on your bank account.
- kindly find details of transaction below:</span></p>
-<div style="text-align:center">
-	<table border="1" cellpadding="1" cellspacing="1" style="width:500px">
-	<caption>transaction details</caption>
-	<tbody>
-		<tr>
-			<td><strong>&nbsp; &nbsp; Sender Account Number </strong></td>
-			<td>&nbsp; &nbsp;&nbsp;<strong>'.$this->fn.'</strong></td>
-		</tr>
+// <p><span><strong>&nbsp; &nbsp; &nbsp; SPRING HERITAGE BANK Debit Alert  as a result of transfer transaction
+// </strong>Please be informed that a debit transaction occurred on your bank account.
+//  kindly find details of transaction below:</span></p>
+// <div style="text-align:center">
+// 	<table border="1" cellpadding="1" cellspacing="1" style="width:500px">
+// 	<caption>transaction details</caption>
+// 	<tbody>
+// 		<tr>
+// 			<td><strong>&nbsp; &nbsp; Sender Account Number </strong></td>
+// 			<td>&nbsp; &nbsp;&nbsp;<strong>'.$this->fn.'</strong></td>
+// 		</tr>
 		
-		<tr>
-			<td><strong>&nbsp; &nbsp; Receiver Account Number </strong></td>
-			<td>&nbsp; &nbsp;&nbsp;<strong>'.$this->ln.'</strong></td>
-		</tr>
-		<tr>
-			<td>&nbsp; &nbsp;<strong>Amount Debited </strong></td>
-			<td>&nbsp; &nbsp;&nbsp;<strong> USD'.$this->em.'</strong></td>
-		</tr><tr>
-			<td>&nbsp; &nbsp;<strong>Previous Balance</strong></td>
-			<td>&nbsp; &nbsp;&nbsp;<strong>  USD '.$this->ph.'</strong></td>
-		</tr>
-		<tr>
-			<td>&nbsp; &nbsp;<strong> Final Account Balance</strong></td>
-			<td>&nbsp; &nbsp; &nbsp;<strong> USD '.$this->bio.'</strong></td>
-		</tr>
-		<tr>
-			<td>&nbsp; &nbsp;<strong>Time </strong></td>
-			<td>&nbsp; &nbsp;&nbsp;<strong>'.date( "h : i : sa" ).'</strong></td>
-		</tr>
+// 		<tr>
+// 			<td><strong>&nbsp; &nbsp; Receiver Account Number </strong></td>
+// 			<td>&nbsp; &nbsp;&nbsp;<strong>'.$this->ln.'</strong></td>
+// 		</tr>
+// 		<tr>
+// 			<td>&nbsp; &nbsp;<strong>Amount Debited </strong></td>
+// 			<td>&nbsp; &nbsp;&nbsp;<strong> USD'.$this->em.'</strong></td>
+// 		</tr><tr>
+// 			<td>&nbsp; &nbsp;<strong>Previous Balance</strong></td>
+// 			<td>&nbsp; &nbsp;&nbsp;<strong>  USD '.$this->ph.'</strong></td>
+// 		</tr>
+// 		<tr>
+// 			<td>&nbsp; &nbsp;<strong> Final Account Balance</strong></td>
+// 			<td>&nbsp; &nbsp; &nbsp;<strong> USD '.$this->bio.'</strong></td>
+// 		</tr>
+// 		<tr>
+// 			<td>&nbsp; &nbsp;<strong>Time </strong></td>
+// 			<td>&nbsp; &nbsp;&nbsp;<strong>'.date( "h : i : sa" ).'</strong></td>
+// 		</tr>
 		
-		<tr>
-			<td>&nbsp; &nbsp;<strong>Date </strong></td>
-			<td>&nbsp; &nbsp; &nbsp;<strong>'.date( "Y-m-d" ).'</strong></td>
-		</tr>
-	</tbody>
-</table>
-</div>
+// 		<tr>
+// 			<td>&nbsp; &nbsp;<strong>Date </strong></td>
+// 			<td>&nbsp; &nbsp; &nbsp;<strong>'.date( "Y-m-d" ).'</strong></td>
+// 		</tr>
+// 	</tbody>
+// </table>
+// </div>
 
 
 
-<p>&nbsp; As a result of this transfer transaction the balance on this account is : USD  '.$this->bio.' </p>
-<p> This is an automated Transaction Alert Service . You are getting this email because a transaction just occured on your account that met the theshold you set .</p>
-<p><strong>Please ensure you do&nbsp; not&nbsp; reveal your pin , Online banking password , responses from your token ( token generated numbers ) or fill card number ( PAN ) to anyone.&nbsp; Spring Heritage Bank Would not request these details from you at any time.</strong></p>
+// <p>&nbsp; As a result of this transfer transaction the balance on this account is : USD  '.$this->bio.' </p>
+// <p> This is an automated Transaction Alert Service . You are getting this email because a transaction just occured on your account that met the theshold you set .</p>
+// <p><strong>Please ensure you do&nbsp; not&nbsp; reveal your pin , Online banking password , responses from your token ( token generated numbers ) or fill card number ( PAN ) to anyone.&nbsp; Spring Heritage Bank Would not request these details from you at any time.</strong></p>
 
-<p><strong>Kindly note that mails containing your full card number would not be delivered.</strong></p>
+// <p><strong>Kindly note that mails containing your full card number would not be delivered.</strong></p>
 
-<p><strong>Also , do not open links , respond to suspicious calls, mails or letters requesting your bank details . Such messages are fraudulent and are not from Spring Heritage Bank.</strong></p>
+// <p><strong>Also , do not open links , respond to suspicious calls, mails or letters requesting your bank details . Such messages are fraudulent and are not from Spring Heritage Bank.</strong></p>
 
-<p><strong>For enquiries please contact us</strong></p>
+// <p><strong>For enquiries please contact us</strong></p>
 
-<p><strong>official website : www.spring-heritagebank.com</strong></p>
+// <p><strong>official website : www.spring-heritagebank.com</strong></p>
 
-<p><strong>official email :info@spring-heritagebank.com</strong></p>
+// <p><strong>official email :info@spring-heritagebank.com</strong></p>
 
-<p>&nbsp;</p>
+// <p>&nbsp;</p>
 
-  </body> 
+//   </body> 
 
-</html>
-
-
+// </html>
 
 
 
-  ';
-
-// Always set content-type when sending HTML email
-$this->headers = "MIME-Version: 1.0" . "\r\n";
-$this->headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-
-// More headers
-$this->headers .= 'From: SPRING HERITAGE BANK<info@spring-heritagebank.com>' ;
 
 
-mail($this->to,$this->subject,$this->message,$this->headers);
+//   ';
+
+// // Always set content-type when sending HTML email
+// $this->headers = "MIME-Version: 1.0" . "\r\n";
+// $this->headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// // More headers
+// $this->headers .= 'From: SPRING HERITAGE BANK<info@spring-heritagebank.com>' ;
+
+
+// mail($this->to,$this->subject,$this->message,$this->headers);
 
     
           
@@ -911,7 +909,9 @@ mail($this->to,$this->subject,$this->message,$this->headers);
        
    echo ' Cash has been removed from senders account <br>';
       
-      }  
+      } else{
+        echo 'okini';
+      } 
      }
    }
    function even4(){
