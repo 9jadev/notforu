@@ -126,57 +126,22 @@ if (!isset($_SESSION["cname"])) {
 		<!-- stock market pricing widget  -->
 		
 		<div class="row">
-
-			<?php echo $classObj->getnoti(); ?>
-			
-			<!-- Item -->
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<?php echo $classObj->genbal3() ?>
-				<?php echo $classObj->pro() ?>
-			</div>
-
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="dashboard-stat color-3">
-					<div class="dashboard-stat-content"><span> <a href="invest.php"> Investment opportunity </a></span></div>
-					<div class="dashboard-stat-icon"><i class="im im-icon-Bank"></i></div>
-				</div>
-			</div>
-
-			<?php echo $classObj->getto(); ?>
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="dashboard-stat color-3">
-					<div class="dashboard-stat-content"><span> <a href="withdraw.php">Withdraw</a></span></div>
-					<div class="dashboard-stat-icon"><i class="im im-icon-Add-UserStar"></i></div>
-				</div>
-			</div>
-
-
-			<!-- Item -->
-			<div class="col-lg-6 col-md-6 col-sm-6">
-				<div class="dashboard-stat color-4">
-					<div class="dashboard-stat-content"> <span><a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Transfer </a></span></div>
-					<div class="dashboard-stat-icon"><i class=" im im-icon-Business-Man"></i></div>
-				</div>
-			</div>
-		</div>
-
-		<div class="row">
 					<div class="slideshow-container">
 
 						<div class="mySlides fade">
-						  <div class="numbertext">1 / 3</div>
+						  <!-- <div class="numbertext">1 / 3</div> -->
 						  <img src="in/bank2.jpg" style="width:100%">
 						  <div class="text">Spring heritage bank</div>
 						</div>
 
 						<div class="mySlides fade">
-						  <div class="numbertext">2 / 3</div>
+						  <!-- <div class="numbertext">2 / 3</div> -->
 						  <img src="in/bank3.jpg" style="width:100%">
 						  <div class="text"> Spring heritage investment </div>
 						</div>
 
 						<div class="mySlides fade">
-						  <div class="numbertext">3 / 3</div>
+						  <!-- <div class="numbertext">3 / 3</div> -->
 						  <img src="in/bank_new.jpg" style="width:100%">
 						  <div class="text"> Spring heritage buisnesses</div>
 						</div>
@@ -210,7 +175,43 @@ if (!isset($_SESSION["cname"])) {
 								}
 						</script>
 
-			</div>		
+			</div>
+			
+		<div class="row">
+
+			<?php echo $classObj->getnoti(); ?>
+			
+			<!-- Item -->
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<?php echo $classObj->genbal3() ?>
+				<?php echo $classObj->pro() ?>
+			</div>
+
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="dashboard-stat color-3">
+					<div class="dashboard-stat-content"><span> <a href="invest.php"> Investment opportunity </a></span></div>
+					<div class="dashboard-stat-icon"><i class="im im-icon-Bank"></i></div>
+				</div>
+			</div>
+
+			<?php echo $classObj->getto(); ?>
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="dashboard-stat color-3">
+					<div class="dashboard-stat-content"><span> <a href="withdraw.php">Withdraw</a></span></div>
+					<div class="dashboard-stat-icon"><i class="im im-icon-Add-UserStar"></i></div>
+				</div>
+			</div>
+
+
+			<!-- Item -->
+			<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="dashboard-stat color-4">
+					<div class="dashboard-stat-content"> <span><a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Transfer </a></span></div>
+					<div class="dashboard-stat-icon"><i class=" im im-icon-Business-Man"></i></div>
+				</div>
+			</div>
+		</div>
+		
 
 		<div class="row">
 			

@@ -13,9 +13,17 @@ public $dbuser,$dbpassword, $dbhost, $dbname, $conn, $query,$query1,$fn,$ln,$em,
     $this->dbuser ="root";
     $this->dbpassword ="";
     $this->dbname ="oki";
+
+    // $this->dbhost ="138.68.74.232";
+    // $this->dbuser ="admin";
+    // $this->dbpassword ="2929361f2cad9afeede8a69f6e618100b8bade5782cec2bb";
+    // $this->dbname ="oki";
+
+
+
     $this->conn = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpassword, $this->dbname );
       if (!$this->conn) {
-        echo "database connction failed";
+        echo "Connection error: " . mysqli_connect_error();
       }
     }
 
