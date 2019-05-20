@@ -263,7 +263,11 @@ if (!isset($_SESSION["cname"])) {
 										<input type="text" name="swift" class="input-text"  value=""  required="yes"/>
 								</label>
 							</p>
-
+							<p class="form-row form-row-wide">
+								<label for="email2">Reciever's IBAN/BIC:
+										<input type="text" name="bic" class="input-text"  value=""  required="yes"/>
+								</label>
+							</p>
 							<p class="form-row form-row-wide">
 								<label for="email2">Reciever's Country:
 										<input type="text" min="0" name="country" class="input-text"  value=""  required="yes"/>
