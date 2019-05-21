@@ -124,11 +124,11 @@ function googleTranslateElementInit() {
 				
 				<li><a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-login"></i> Transfer </a></li>
 				 
-				<li><a href="transaction.php"><i class="sl sl-icon-envelope-open"></i> Transactions </a></li> 
-				<li><a href="cards-application.php"><i class="sl sl-icon-envelope-open"></i> Atms </a></li>
+				<li><a href="transaction.php"><i class="sl sl-icon-book-open"></i> Transactions </a></li> 
+				<li><a href="cards-application.php"><i class="sl sl-icon-credit-card"></i> Atms </a></li>
 				
 
-				<li><a href="withdraw.php"><i class="sl sl-icon-envelope-open"></i> Withdraw </a></li>
+				<li><a href="withdraw.php"><i class="sl sl-icon-map"></i> Withdraw </a></li>
 				
 				<?php $classObj->mann2(); ?>
 				<!-- mann2 link 3 -->
