@@ -8,5 +8,7 @@ $headers = "From: webmaster@example.com" . "\r\n" .
 $send = mail($to,$subject,$txt,$headers);
 if($send){
 	echo 'Sent';
+}else{
+	echo 'no it did not';
 }
 ?>
