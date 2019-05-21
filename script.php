@@ -9,15 +9,15 @@ class ok {
 public $dbuser,$dbpassword, $dbhost, $dbname, $conn, $query,$query1,$fn,$ln,$em,$un,$ph,$pass,$cpass,$bio,$img_path,$img_ext,$img_dir,$img_name,$img_tmpname,$client,$message,$process,$process1,$row,$to,$id,$vid,$pn,$purl,$sid,$token,$rpp,$nor,$nop,$page,$tpfr,$subject,$headers;
 
    function dbcon(){ 
-    $this->dbhost ="localhost";
-    $this->dbuser ="admin";
-    $this->dbpassword ="2929361f2cad9afeede8a69f6e618100b8bade5782cec2bb";
-    $this->dbname ="oki";
-
     // $this->dbhost ="localhost";
-    // $this->dbuser ="root";
-    // $this->dbpassword ="";
+    // $this->dbuser ="admin";
+    // $this->dbpassword ="2929361f2cad9afeede8a69f6e618100b8bade5782cec2bb";
     // $this->dbname ="oki";
+
+    $this->dbhost ="localhost";
+    $this->dbuser ="root";
+    $this->dbpassword ="";
+    $this->dbname ="oki";
 
     $this->conn = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpassword, $this->dbname );
       if (!$this->conn) {

@@ -77,15 +77,13 @@ function googleTranslateElementInit() {
 							<li><a href="index.php"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
 							<li><a href="messages.php"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
 							<li><a href="profile.php">
-				            <i class="sl sl-icon-user"></i>&nbsp Profile</a></li>
-				            
-							<li><a href="cards-application.php"><i class="sl sl-icon-envelope-open"></i> Atms</a></li>
-							
-							<li><a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-envelope-open"></i>Transfer</a></li>
-							
-							
-							<li><a href="withdraw.php"><i class="sl sl-icon-user"></i> Withdraw</a></li>
-							<li><a href="transaction.php"><i class="sl sl-icon-envelope-open"></i> Transactions</a></li>
+				            <i class="sl sl-icon-user"></i>Profile</a></li>
+							<li><a href="cards-application.php">
+								<i class="sl sl-icon-credit-card"></i> Atms</a></li>
+							<li><a href="#sign-in-dialog" class="sign-in popup-with-zoom-anim"><i class="sl sl-icon-logout"></i>Transfer</a></li>
+
+							<li><a href="withdraw.php"><i class="sl sl-icon-map"></i> Withdraw</a></li>
+							<li><a href="transaction.php"><i class="sl sl-icon-book-open"></i> Transactions</a></li>
 							<?php $classObj->mann1(); ?> 
 							<!-- mann1 link 2  -->
 							 <li><a href="logout.php"><i class="sl sl-icon-power"></i> Logout</a></li>
