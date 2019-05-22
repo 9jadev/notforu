@@ -89,6 +89,7 @@ if (!isset($_SESSION["cname"])) {
 		</div>
 		<?php $classObj->lolol(); ?>
 		<!-- Notice -->
+	<h4 class="text-center">lastest session <sapn style="color: green;"><?php $classObj->getlast(); ?></sapn> </h4>
 		<!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div class="tradingview-widget-container__widget"></div>

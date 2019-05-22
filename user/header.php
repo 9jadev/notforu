@@ -72,10 +72,12 @@ function googleTranslateElementInit() {
 					
 					<!-- User Menu -->
 					<div class="user-menu">
-						<div class="user-name"><span><img src="../upload/<?php $classObj->pullproim(); ?>" alt=""></span>My Account</div>
+						<div class="user-name"><span><img src="../upload/<?php $classObj->pullproim(); ?>" alt=""></span>My Account
+						</div>
+
 						<ul>
 							<li><a href="index.php"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
-							<li><a href="messages.php"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
+							<li><a href="dashboard-messages.php"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
 							<li><a href="profile.php">
 				            <i class="sl sl-icon-user"></i>Profile</a></li>
 							<li><a href="cards-application.php">
@@ -105,7 +107,6 @@ function googleTranslateElementInit() {
 </header>
 <div class="clearfix"></div>
 <!-- Header Container / End -->
-			
 <!-- Dashboard -->
 <div id="dashboard">
 
@@ -116,6 +117,7 @@ function googleTranslateElementInit() {
 	<a href="#" class="dashboard-responsive-nav-trigger"><i class="fa fa-reorder"></i> Dashboard Navigation</a>
 
 	<div class="dashboard-nav">
+
 		<div class="dashboard-nav-inner">
 
 			<ul data-submenu-title="Main">
@@ -138,5 +140,4 @@ function googleTranslateElementInit() {
 			</ul>		
 		</div>
 	</div>
-
 
