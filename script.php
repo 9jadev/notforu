@@ -189,7 +189,7 @@ mail($this->to,$this->subject,$this->message,$this->headers);
       $id = $_SESSION['cacn'];
       // run an update first
        $sess = date("l jS \of F Y");
-      $q = " UPDATE `customer` SET `last_session` = '$sess' WHERE `customer`.`customer_id` = '$id' ";
+      $q = " UPDATE `customer` SET `last_session` = '$sess' WHERE `customer`.`customer_id` = '$sess' ";
       $pro = mysqli_query($this->conn , $q);
       if($pro){
         $query = mysqli_query($this->conn, " SELECT * FROM `customer` WHERE `customer_num` = '$id' ");
