@@ -44,7 +44,7 @@ public $dbuser,$dbpassword, $dbhost, $dbname, $conn, $query,$query1,$fn,$ln,$em,
          </div>';
      exit();    
   }
-    $sess = date("l jS \of F Y");
+    $sess = date("l jS \of F Y  h:i:s A");
     $this->query="INSERT INTO `customer` (`customer_un`, `customer_fn`, `customer_ln`, `customer_img`, `customer_num`, `customer_email`, `customer_phone`, `customer_pass`, `customer_date`,`last_session`) VALUES ('$this->un','$this->fn','$this->ln', '2.png','$this->bio','$this->em','$this->ph',sha1('$this->pass'),NOW(),'$sess')";
     $this->process = mysqli_query($this->conn , $this->query);
     if ($this->process) {
@@ -188,13 +188,15 @@ mail($this->to,$this->subject,$this->message,$this->headers);
      function getlast(){
       $id = $_SESSION['cacn'];
       // run an update first
-       $sess = date("l jS \of F Y");
-      $q = " UPDATE `customer` SET `last_session` = '$sess' WHERE `customer`.`customer_id` = '$sess' ";
+      $sess = date("l jS \of F Y  h:i:s A");
+
+      $q = " UPDATE `customer` SET `last_session` = '$sess' WHERE `customer`.`customer_num` = '$id' ";
       $pro = mysqli_query($this->conn , $q);
       if($pro){
         $query = mysqli_query($this->conn, " SELECT * FROM `customer` WHERE `customer_num` = '$id' ");
         $row = mysqli_fetch_assoc($query);
-        echo $row["last_session"];  
+        echo $row["last_session"];
+        //echo $sess;  
       }
      }
   function genbal(){
