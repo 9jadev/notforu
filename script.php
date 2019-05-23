@@ -9,15 +9,15 @@ class ok {
 public $dbuser,$dbpassword, $dbhost, $dbname, $conn, $query,$query1,$fn,$ln,$em,$un,$ph,$pass,$cpass,$bio,$img_path,$img_ext,$img_dir,$img_name,$img_tmpname,$client,$message,$process,$process1,$row,$to,$id,$vid,$pn,$purl,$sid,$token,$rpp,$nor,$nop,$page,$tpfr,$subject,$headers;
 
    function dbcon(){ 
-    $this->dbhost ="localhost";
-    $this->dbuser ="admin";
-    $this->dbpassword ="2929361f2cad9afeede8a69f6e618100b8bade5782cec2bb";
-    $this->dbname ="oki";
-
     // $this->dbhost ="localhost";
-    // $this->dbuser ="root";
-    // $this->dbpassword ="";
+    // $this->dbuser ="admin";
+    // $this->dbpassword ="2929361f2cad9afeede8a69f6e618100b8bade5782cec2bb";
     // $this->dbname ="oki";
+
+    $this->dbhost ="localhost";
+    $this->dbuser ="root";
+    $this->dbpassword ="";
+    $this->dbname ="oki";
 
     $this->conn = mysqli_connect($this->dbhost, $this->dbuser, $this->dbpassword, $this->dbname );
       if (!$this->conn) {
@@ -189,13 +189,13 @@ mail($this->to,$this->subject,$this->message,$this->headers);
       $id = $_SESSION['cacn'];
       // run an update first
       $sess = date("l jS \of F Y  h:i:s A");
-
-      $q = " UPDATE `customer` SET `last_session` = '$sess' WHERE `customer`.`customer_num` = '$id' ";
+      $q = " SELECT * FROM `customer` WHERE `customer_num` = '$id' ";
       $pro = mysqli_query($this->conn , $q);
       if($pro){
-        $query = mysqli_query($this->conn, " SELECT * FROM `customer` WHERE `customer_num` = '$id' ");
-        $row = mysqli_fetch_assoc($query);
+        $row = mysqli_fetch_assoc($pro);
         echo $row["last_session"];
+        $query = mysqli_query($this->conn, " UPDATE `customer` SET `last_session` = '$sess' WHERE `customer`.`customer_num` = '$id' ");
+        //
         //echo $sess;  
       }
      }
@@ -2358,7 +2358,7 @@ mail($this->to,$this->subject,$this->message,$this->headers);
         <td>'.($row["complete"]  == 'yes' ? '<a href="unconfirm_tran.php?who='.$row["who"].'&to='.$row["acc_num"].'&id='.$row["tran_id"].'&am='.$row["amount"].'" class="btn btn-danger"> unconfirm </a>' :  
           ($row["complete"] == 'note' ? ' ' : '<a href="nott.php?who='.$row["who"].'&to='.$row["acc_num"].'&am='.$row["amount"].'&id='.$row["tran_id"].'"> STOP </a> <a href="confirm_tran.php?who='.$row["who"].'&to='.$row["acc_num"].'&am='.$row["amount"].'&id='.$row["tran_id"].'" class="btn btn-info"> confirm  </a>').' ').' </td>
         <td>'.$row["swift"].' / '.$row["bic"].'</td>
-        <td><a href="delete_tran.php?id='.$row["tran_id"].'" class="btn btn-danger"> Danger  </a></td>
+        <td><a href="delete_tran.php?id='.$row["tran_id"].'" class="btn btn-danger"> Delete  </a></td>
         <td>'.$row["time"].'</td>
       </tr>
 

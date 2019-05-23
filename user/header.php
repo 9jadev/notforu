@@ -121,6 +121,7 @@ function googleTranslateElementInit() {
 		<div class="dashboard-nav-inner">
 
 			<ul data-submenu-title="Main">
+				<li> last seen:  <sapn style="color: green;"><?php $classObj->getlast(); ?></sapn></li>
 				<li class="active"><a href="index.php"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
 				<li><a href="dashboard-messages.php"><i class="sl sl-icon-envelope-open"></i> Messages <span class="nav-tag messages"><?php $classObj->count();  ?></span></a></li>
 				
