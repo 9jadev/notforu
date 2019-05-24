@@ -4,9 +4,32 @@ require __DIR__ . '/vendor/autoload.php';
 
 // Use the REST API Client to make requests to the Twilio REST API
 use Twilio\Rest\Client;
+use \Mailjet\Resources;
 
 class ok {
 public $dbuser,$dbpassword, $dbhost, $dbname, $conn, $query,$query1,$fn,$ln,$em,$un,$ph,$pass,$cpass,$bio,$img_path,$img_ext,$img_dir,$img_name,$img_tmpname,$client,$message,$process,$process1,$row,$to,$id,$vid,$pn,$purl,$sid,$token,$rpp,$nor,$nop,$page,$tpfr,$subject,$headers;
+
+   function testmailjet(){
+     $mj = new \Mailjet\Client(getenv('854e1047c32aacba9df36d1b825cb57b'), getenv('0c802b0758d0929a620744bf1dbfb715'));
+     // Resources are all located in the Resources class
+     $body = [
+      'FromEmail' => "springherigate@gmail.com",
+      'FromName' => "Mailjet Pilot",
+      'Subject' => "Your email flight plan!",
+      'Text-part' => "Dear passenger, welcome to Mailjet! May the delivery force be with you!",
+      'Html-part' => "<h3>Dear passenger, welcome to Mailjet!</h3><br />May the delivery force be with you!",
+      'Recipients' => [['Email' => "ahambasolomon800@gmail.com"]]
+      ];
+     $response = $mj->post(Resources::$Email, ['body' => $body]);
+
+     // if ($response->success()) {
+     //   var_dump($response->getData());
+     // }else{
+     //  echo "string";
+     //  var_dump($response->getStatus());
+     // }
+     var_dump($response);
+   }
 
    function dbcon(){ 
     $this->dbhost ="localhost";
