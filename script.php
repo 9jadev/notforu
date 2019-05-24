@@ -22,13 +22,13 @@ public $dbuser,$dbpassword, $dbhost, $dbname, $conn, $query,$query1,$fn,$ln,$em,
       ];
      $response = $mj->post(Resources::$Email, ['body' => $body]);
 
-     // if ($response->success()) {
-     //   var_dump($response->getData());
-     // }else{
-     //  echo "string";
-     //  var_dump($response->getStatus());
-     // }
-     var_dump($response);
+     if ($response->success()) {
+       var_dump($response->getData());
+     }else{
+      echo "string";
+      var_dump($response->getStatus());
+     }
+    // var_dump($response);
    }
 
    function dbcon(){ 
