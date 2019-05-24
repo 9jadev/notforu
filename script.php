@@ -8,27 +8,55 @@ use \Mailjet\Resources;
 
 class ok {
 public $dbuser,$dbpassword, $dbhost, $dbname, $conn, $query,$query1,$fn,$ln,$em,$un,$ph,$pass,$cpass,$bio,$img_path,$img_ext,$img_dir,$img_name,$img_tmpname,$client,$message,$process,$process1,$row,$to,$id,$vid,$pn,$purl,$sid,$token,$rpp,$nor,$nop,$page,$tpfr,$subject,$headers;
-
-   function testmailjet(){
-     $mj = new \Mailjet\Client(getenv('854e1047c32aacba9df36d1b825cb57b'), getenv('0c802b0758d0929a620744bf1dbfb715'));
-     // Resources are all located in the Resources class
-     $body = [
-      'FromEmail' => "springherigate@gmail.com",
-      'FromName' => "Mailjet Pilot",
-      'Subject' => "Your email flight plan!",
-      'Text-part' => "Dear passenger, welcome to Mailjet! May the delivery force be with you!",
-      'Html-part' => "<h3>Dear passenger, welcome to Mailjet!</h3><br />May the delivery force be with you!",
-      'Recipients' => [['Email' => "ahambasolomon800@gmail.com"]]
-      ];
-     $response = $mj->post(Resources::$Email, ['body' => $body]);
-
+function testmailjet(){
+  $mj = new \Mailjet\Client(getenv('854e1047c32aacba9df36d1b825cb57b'), getenv('
+2929361f2cad9afeede8a69f6e618100b8bade5782cec2bb'),true,['version' => 'v3.1']);
+      $body = [
+    'Messages' => [
+        [
+            'From' => [
+                'Email' => "springherigate@gmail.com",
+                'Name' => "Mailjet Pilot"
+            ],
+            'To' => [
+                [
+                    'Email' => "ahambasolomon800@gmail.com",
+                    'Name' => "passenger 1"
+                ],
+                [
+                    'Email' => "passenger2@mailjet.com",
+                    'Name' => "passenger 2"
+                ]
+            ],
+            'Cc' => [
+                [
+                    'Email' => "copilot@mailjet.com",
+                    'Name' => "Copilot"
+                ]
+            ],
+            'Bcc' => [
+                [
+                    'Email' => "air-traffic-control@mailjet.com",
+                    'Name' => "Air traffic control"
+                ]
+            ],
+            'Subject' => "Your email flight plan!",
+            'TextPart' => "Dear passenger 1, welcome to Mailjet! May the delivery force be with you!",
+            'HTMLPart' => "<h3>Dear passenger 1, welcome to <a href=\"https://www.mailjet.com/\">Mailjet</a>!</h3><br />May the delivery force be with you!"
+        ]
+    ]
+];
+  $response = $mj->post(Resources::$Email, ['body' => $body]);
+  $response->success() && var_dump($response->getData());
+  
+     // $response->success() && var_dump($response->getData());
      if ($response->success()) {
        var_dump($response->getData());
      }else{
       echo "string";
       var_dump($response->getStatus());
      }
-    // var_dump($response);
+    var_dump($response);
    }
 
    function dbcon(){ 
