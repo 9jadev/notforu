@@ -38,6 +38,27 @@ require('script.php');
     <script type="text/javascript">
         
     </script>
+    <link rel="stylesheet" href="phone/build/css/intlTelInput.css">    
+    <style type="text/css">
+        .iti-flag {background-image: url("phone/build/img/flags.png");}
+
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+          .iti-flag {background-image: url("phone/build/img/flags@2x.png");}
+        }
+        .country{
+            color: black;
+        }
+        .standard{
+            color: black;
+        }
+         body{
+            /*background: #ee9209;*/
+        }
+        .bg-primary{
+            /*background: #ee9209;*/
+        }
+    </style>
+
     <!-- //Default-JavaScript-File -->
     <!-- fonts -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
@@ -120,15 +141,20 @@ background: linear-gradient(to right, #eeeeee0d, #eeeeee1f);
 
 }
 
-.boo{
+boo{
     color: white;
     padding: 6px;
     border-radius: 5px;
 }
 
-  bae{
-     border: 1px dotted #2ebaef;
-   }
+bae{
+   border: 1px dotted #2ebaef;
+}
+
+/*@media (max-width: ){
+    #ph{    
+    }
+}*/
 </style>
 </head>    <!-- //Head -->
     <!-- Body -->
@@ -168,20 +194,18 @@ background: linear-gradient(to right, #eeeeee0d, #eeeeee1f);
                         <center><h2 style="color: white;">SPRING HERITAGE BANK</h2></center>
                         <center><h4 style="color: white;">CREATE AN ACCOUNT</h4></center>
                         <?php echo $classObj->register() ?>
-                        <input type="text" id="fn" name="fn" placeholder="First Name" required=""/>
+                        <input type="text" id="fn" name="fn" placeholder="First Name" required="yes"/>
                         <span class="error_first_name"></span>
                         
-                        <input type="text" id="ln" name="ln" placeholder="Last Name" required=""/>
+                        <input type="text" id="ln" name="ln" placeholder="Last Name" required="yes"/>
                         <span class="error_last_name"></span>
-
-                        <input type="text" id="un" name="un" placeholder="User name" required=""/>
+                        <input type="text" id="un" name="un" placeholder="User name" required="yes"/>
                         <span class="error_user_name"></span>
 
-                        <input type="email" id="em" name="em" placeholder="User Email" required=""/>
+                        <input type="email" id="em" name="em" placeholder="User Email" required="yes"/>
                         <span class="error_email"></span>
 
-                        <input type="tel" id="tel" name="ph"  placeholder="Phone number"   maxlength="15" required=""/>
-                        <span style="color: green"> PLEASE ENSURE YOUR PHONE NUBMER IS IN INTERNATIONAL FORMAT (e.g uk 44XXXXXXX)</span>
+                        <input type="tel" id="tel" name="ph"  placeholder="Phone number" required="yes" />
                         <span class="error_phone"></span>
                         <span class="error_phone1"></span>
                     
@@ -203,8 +227,6 @@ background: linear-gradient(to right, #eeeeee0d, #eeeeee1f);
                  $('.error_first_name').hide();
                  $('.error_last_name').hide();
                  $('.error_user_name').hide();
-                 $('.error_phone').hide();
-                 $('.error_phone1').hide();
                  $('.error_pass').hide();
                  $('.error_pass2').hide();
                  
@@ -229,18 +251,11 @@ background: linear-gradient(to right, #eeeeee0d, #eeeeee1f);
                   
                     check_con_pass();
                  });
-                 $("#tel").focusout(function(){
-                  
-                    check_tel();
-                 });
-
                  $("#fn").focusout(function(){
-                  
                     check_fn();
                  });
 
                  $("#ln").focusout(function(){
-                      
                     check_ln();
                  });
                  
@@ -250,16 +265,14 @@ background: linear-gradient(to right, #eeeeee0d, #eeeeee1f);
                     eun = false;
                     ep = false;
                     ep2 = false;
-                    etel =false;
                      
                     check_fn();
                     check_ln();
                     check_un();
-                    check_tel();
                     check_pass();
                     check_con_pass();
 
-                    if (efn == false && eun == false && eln == false && ep == false && ep2 == false && etel == false ) {
+                    if (efn == false && eun == false && eln == false && ep == false && ep2 == false) {
                         return true;
                     }else{
                         return false;
@@ -530,6 +543,15 @@ SPRING HERITAGE BANK and its affiliates offer investment products, which may inc
 
     <script type="text/javascript" src="js/move-top.js"></script>
     <script type="text/javascript" src="js/easing.js"></script>
+    <script src="phone/build/js/intlTelInput.js"></script>
+    <script type="text/javascript">
+        var input = document.querySelector("#tel");
+        window.intlTelInput(input, {
+        hiddenInput: "full_phone",
+        utilsScript: "phone/build/js/utils.js?1537727621611" // just for formatting/placeholders etc
+    });
+    </script>
+
 
     <!-- here stars scrolling icon -->
     <script type="text/javascript">

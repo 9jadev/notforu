@@ -179,7 +179,7 @@
                         <p>
                          <h3> Security & Fraud Prevention</h3>   
                             Your Security is Important to Us
-At Spring HEritage Bank, protecting your account information is one of our top priorities. Some 500,000 to 700,000 people a year are at risk of having their identities stolen, according to government and private sector estimates. Identity theft occurs when someone steals your personal information and uses it to establish credit, borrow money, charge items or even commit crimes in your name.
+At Spring Heritage Bank, protecting your account information is one of our top priorities. Some 500,000 to 700,000 people a year are at risk of having their identities stolen, according to government and private sector estimates. Identity theft occurs when someone steals your personal information and uses it to establish credit, borrow money, charge items or even commit crimes in your name.
 
 While the incidence of Internet identity theft is growing, fraud experts agree that you still are more likely to become a victim of this federal crime by more traditional means, such as improperly discarding credit card or other financial data.</p>
                     </div>

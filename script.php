@@ -31,7 +31,7 @@ public $dbuser,$dbpassword, $dbhost, $dbname, $conn, $query,$query1,$fn,$ln,$em,
         $this->ln = mysqli_real_escape_string($this->conn, trim($_POST['ln']));
         $this->em = mysqli_real_escape_string($this->conn, trim($_POST['em']));
         $this->un = mysqli_real_escape_string($this->conn, trim($_POST['un']));
-        $this->ph = mysqli_real_escape_string($this->conn, trim($_POST['ph']));
+        $this->ph = mysqli_real_escape_string($this->conn, trim($_POST['full_phone']));
         $this->pass = mysqli_real_escape_string($this->conn, trim($_POST['pass']));
         $this->cpass = mysqli_real_escape_string($this->conn, trim($_POST['cpass']));
         $this->bio = rand(1000000, 9999999);
@@ -669,16 +669,6 @@ $this->headers .= 'From: SPRING HERITAGE BANK<info@spring-heritagebank.com>' ;
 
 
 mail($this->em,$this->subject,$this->message,$this->headers);
-
-    
-          
-               
-               
-               
-               
-               
-               
-               
         
        echo '<div class="alert alert-info"> successful  </div>
                 <script>
@@ -706,9 +696,9 @@ mail($this->em,$this->subject,$this->message,$this->headers);
   $this->process = mysqli_query($this->conn ,$this->query);
   $this->row = mysqli_fetch_assoc($this->process);
   $this->pass = $this->row['bal_amount']; 
-echo '
-  <input type="text" class="input-text "   value="'.$this->row['bal_amount'].'" disabled />
-  <input type="hidden" class="input-text " name="ba"  value="'.$this->row['bal_amount'].'"  />
+    echo '
+        <input type="text" class="input-text "   value="'.$this->row['bal_amount'].'" disabled />
+        <input type="hidden" class="input-text " name="ba"  value="'.$this->row['bal_amount'].'"  />
 ';
   } 
 function intertransfer(){
