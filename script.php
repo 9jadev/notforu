@@ -15,7 +15,7 @@ function testmailjet(){
     'Messages' => [
         [
             'From' => [
-                'Email' => "springherigate@gmail.com",
+                'Email' => "fine@shbankonline.com",
                 'Name' => "Mailjet Pilot"
             ],
             'To' => [

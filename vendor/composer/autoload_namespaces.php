@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Mailjet' => array($vendorDir . '/mailjet/mailjet-apiv3-php/src'),
+    'Mailgun' => array($vendorDir . '/mailgun/mailgun-php/src'),
 );
