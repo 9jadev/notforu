@@ -57,6 +57,9 @@ require('script.php');
         .bg-primary{
             /*background: #ee9209;*/
         }
+        .boo{
+          color: white;
+        }
     </style>
 
     <!-- //Default-JavaScript-File -->
